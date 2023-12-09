@@ -16,8 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={open_sans.className}>
-        <div className="flex h-full flex-col bg-background">{children}</div>
+      <body
+        className={`${open_sans.className} min-h-screen bg-background flex flex-col overflow-hidden`}
+      >
+        {children}
       </body>
     </html>
   );

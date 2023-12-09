@@ -6,6 +6,12 @@ import {
   ScrollTextIcon,
   ShoppingBasketIcon,
   UtensilsIcon,
+  InfoIcon,
+  BikeIcon,
+  CreditCardIcon,
+  CircleDollarSignIcon,
+  BanknoteIcon,
+  StoreIcon,
 } from "lucide-react";
 
 export const SIDEBAR_ICON = {
@@ -19,4 +25,13 @@ export const SIDEBAR_ICON = {
 export const MENU_ICON = {
   drawer: <MenuIcon />,
   cart: <ShoppingBasketIcon />,
+};
+
+export const ICONS = {
+  info: <InfoIcon size={16} />,
+  delivery: <BikeIcon size={16} />,
+  store: <StoreIcon size={16} />,
+  card: <CreditCardIcon size={16} />,
+  money: <BanknoteIcon size={16} />,
+  pix: <CircleDollarSignIcon size={16} />,
 };
