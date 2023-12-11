@@ -1,5 +1,10 @@
-import { Button } from "../ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "../ui/sheet";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { ReactNode } from "react";
 import { MENU_ICON } from "@/constants/Icons";
 

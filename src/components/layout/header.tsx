@@ -1,10 +1,10 @@
 "use client";
 
-import { Separator } from "../ui/separator";
+import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import Logo from "../ui/logo";
-import Sidebar from "./sidebar";
-import SidebarLink from "../ui/sidebar-link";
+import Logo from "@/components/ui/logo";
+import Sidebar from "@/components/layout/sidebar";
+import SidebarLink from "@/components/ui/sidebar-link";
 
 const Header = () => {
   return (

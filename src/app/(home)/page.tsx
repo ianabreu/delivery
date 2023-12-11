@@ -1,15 +1,5 @@
 import Header from "@/components/layout/header";
-import InfoStore from "@/components/layout/info-store";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { ICONS } from "@/constants/Icons";
+import InfoStore from "@/components/layout/info-store/info-store";
 
 import Image from "next/image";
 
@@ -19,7 +9,7 @@ export default function Home() {
       <Header />
       <main className="max-w-4xl w-full mx-auto flex-1">
         <section className="bg-background flex flex-col">
-          <div>
+          <div className="relative">
             <Image
               src={"/cover.png"}
               alt="Imagem do Estabelecimento"
