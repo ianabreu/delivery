@@ -1,17 +1,7 @@
-import Image from "next/image";
+import Image from "@/components/ui/image";
 
 const Logo = () => {
-  return (
-    <Image
-      src={"/logo.svg"}
-      alt="Logo"
-      width={0}
-      height={0}
-      className="h-auto w-full"
-      sizes="100vw"
-      priority
-    />
-  );
+  return <Image src={"/logo.svg"} alt="Logo" className="h-auto w-full" />;
 };
 
 export default Logo;

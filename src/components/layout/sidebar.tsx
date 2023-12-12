@@ -6,7 +6,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { ReactNode } from "react";
-import { MENU_ICON } from "@/constants/Icons";
+import { MENU_ICON } from "@/lib/constants/Icons";
 
 interface SidebarProps {
   children?: ReactNode;

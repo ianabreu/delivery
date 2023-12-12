@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Button } from "../ui/button";
 import { SheetClose } from "../ui/sheet";
 import Link from "next/link";
-import { SIDEBAR_ICON } from "@/constants/Icons";
+import { SIDEBAR_ICON } from "@/lib/constants/Icons";
 
 interface SidebarLinkProps {
   children: ReactNode;

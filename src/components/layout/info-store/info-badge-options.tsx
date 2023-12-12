@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { ICONS } from "@/constants/Icons";
+import { ICONS } from "@/lib/constants/Icons";
 
 interface InfoBadgeProps {
   icon?: keyof typeof ICONS;
