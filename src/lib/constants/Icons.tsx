@@ -12,6 +12,7 @@ import {
   CircleDollarSignIcon,
   BanknoteIcon,
   StoreIcon,
+  TimerIcon,
 } from "lucide-react";
 
 export const SIDEBAR_ICON = {
@@ -34,4 +35,5 @@ export const ICONS = {
   card: <CreditCardIcon size={16} />,
   money: <BanknoteIcon size={16} />,
   pix: <CircleDollarSignIcon size={16} />,
+  time: <TimerIcon size={16} />,
 };
