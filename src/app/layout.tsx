@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${open_sans.className} min-h-screen bg-background flex flex-col overflow-hidden`}
+        className={`${open_sans.className} min-h-screen bg-background flex flex-col overflow-x-hidden`}
       >
         {children}
       </body>
