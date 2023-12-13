@@ -1,13 +1,11 @@
 import ProductItem from "./product-item";
+import { ICategory } from "@/@types/category";
 
-const ProductList = () => {
-  const categories = [
-    "Pizzas",
-    "Pizzas Especiais",
-    "Bebidas",
-    "Aperitivos",
-    "Bebidas Alcoolicas",
-  ];
+interface Props {
+  categories: ICategory[];
+}
+
+const ProductList = async ({ categories }: Props) => {
   const products = [
     {
       id: "1",
@@ -23,7 +21,7 @@ const ProductList = () => {
       name: "Pizza de Calabresa",
       description: "Tomate, muçarela e calabresa",
       price: 40,
-      category: "Pizzas Especiais",
+      category: "Pizzas",
       imageURL:
         "https://uploads.metropoles.com/wp-content/uploads/2023/08/09145143/Pizza-31.jpg",
     },
@@ -84,14 +82,14 @@ const ProductList = () => {
   ];
   return (
     <div>
-      {categories.map((category, index) => (
-        <div key={index}>
-          <p>{category}</p>
+      {categories.map((category) => (
+        <div key={category.id}>
+          <h3 className="m-4 text-xl font-bold">{category.name}</h3>
           <div className="grid sm:grid-cols-2 gap-2 my-2 mx-4 ">
             {products
-              .filter((product) => product.category === category)
-              .map((prod) => (
-                <ProductItem product={prod} key={prod.id} />
+              .filter((product) => product.category === category.name)
+              .map((product) => (
+                <ProductItem product={product} key={product.id} />
               ))}
           </div>
         </div>
