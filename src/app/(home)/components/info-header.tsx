@@ -4,7 +4,7 @@ import { ICONS } from "@/lib/constants/Icons";
 
 const InfoHeader = () => {
   return (
-    <section className="bg-background flex flex-col ">
+    <section className="bg-background flex flex-col shadow-sm shadow-stone-500">
       <div className="relative">
         <Image
           src={"/cover.png"}

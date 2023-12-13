@@ -9,9 +9,11 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="max-w-4xl w-full mx-auto flex-1">
+      <main className="max-w-4xl w-full mx-auto flex-1 ">
         <InfoHeader />
-        <CategoryList />
+        <div className="sticky top-0 bg-background shadow-sm shadow-stone-500">
+          <CategoryList />
+        </div>
         <ProductList />
       </main>
       <Footer />
