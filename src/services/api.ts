@@ -24,8 +24,9 @@ const api = {
 
       querySnapshot.forEach(
         (doc: QueryDocumentSnapshot<DocumentData, DocumentData>) => {
-          let category = {
+          let category: ICategory = {
             id: doc.id,
+            slug: doc.data().slug,
             name: doc.data().name,
             status: doc.data().status,
           };
@@ -53,6 +54,7 @@ const api = {
           let product: IProduct = {
             id: doc.id,
             category_id: doc.data().category_id,
+            slug: doc.data().slug,
             name: doc.data().name,
             price: doc.data().price,
             description: doc.data().description,

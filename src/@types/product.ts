@@ -7,5 +7,6 @@ export interface IProduct {
   price: number;
   description: string;
   image_url: string;
+  slug: string;
   status: Status;
 }
