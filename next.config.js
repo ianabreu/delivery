@@ -6,6 +6,14 @@ const nextConfig = {
         hostname: "uploads.metropoles.com",
         protocol: "https",
       },
+      {
+        hostname: "blog.biglar.com.br",
+        protocol: "https",
+      },
+      {
+        hostname: "images.tcdn.com.br",
+        protocol: "https",
+      },
     ],
   },
 };

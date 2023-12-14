@@ -1,21 +1,16 @@
+import { IProduct } from "@/@types/product";
 import { Button } from "@/components/ui/button";
 import Image from "@/components/ui/image";
 
 interface ProductItemProps {
-  product: {
-    id: string;
-    name: string;
-    description: string;
-    price: number;
-    imageURL: string;
-  };
+  product: IProduct;
 }
 const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <div className="flex gap-2 p-2 rounded items-start shadow-stone-500 shadow-sm">
       <div className="w-20 h-20 rounded-lg overflow-hidden">
         <Image
-          src={product.imageURL}
+          src={product.image_url}
           alt={product.name}
           className="object-cover w-full h-full"
         />
