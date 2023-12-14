@@ -1,6 +1,3 @@
-import { ICategory, Status } from "@/@types/category";
-import { IProduct } from "@/@types/product";
-import { db } from "@/lib/firebase";
 import {
   DocumentData,
   QueryDocumentSnapshot,
@@ -9,7 +6,13 @@ import {
   orderBy,
   query,
   where,
+  doc,
+  getDoc,
 } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+
+import { ICategory, Status } from "@/@types/category";
+import { IProduct } from "@/@types/product";
 
 const api = {
   getCategories: async (status: Status = "active") => {
@@ -68,6 +71,30 @@ const api = {
     } catch (error) {
       console.log(error);
       return [];
+    }
+  },
+  getProduct: async (slug: string) => {
+    try {
+      const productRef = collection(db, "products");
+      const q = query(productRef, where("slug", "==", slug));
+      const docSnap = await getDocs(q);
+      const doc: QueryDocumentSnapshot<DocumentData, DocumentData> =
+        docSnap.docs[0];
+      const product: IProduct = {
+        id: doc.id,
+        name: doc.data().name,
+        category_id: doc.data().category_id,
+        description: doc.data().description,
+        image_url: doc.data().image_url,
+        price: doc.data().price,
+        slug: doc.data().slug,
+        status: doc.data().status,
+      };
+
+      return product;
+    } catch (error) {
+      console.log(error);
+      throw new Error("Produto não encontrado");
     }
   },
 };

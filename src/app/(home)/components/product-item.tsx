@@ -1,11 +1,14 @@
+"use client";
 import { IProduct } from "@/@types/product";
 import { Button } from "@/components/ui/button";
 import Image from "@/components/ui/image";
+import { useRouter } from "next/navigation";
 
 interface ProductItemProps {
   product: IProduct;
 }
 const ProductItem = ({ product }: ProductItemProps) => {
+  const router = useRouter();
   return (
     <div className="flex gap-2 p-2 rounded items-start shadow-stone-500 shadow-sm">
       <div className="w-20 h-20 rounded-lg overflow-hidden">
@@ -34,6 +37,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
             variant={"default"}
             size={"sm"}
             className="text-base font-bold"
+            onClick={() => router.push(`produtos/${product.slug}`)}
           >
             +
           </Button>
