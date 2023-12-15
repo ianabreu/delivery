@@ -6,11 +6,7 @@ export interface ICategory {
   slug: string;
   status: Status;
 }
-export interface ICategoryWithProducts {
-  id: string;
-  name: string;
-  slug: string;
-  status: Status;
+export interface ICategoryWithProducts extends ICategory {
   products: IProduct[];
 }
 

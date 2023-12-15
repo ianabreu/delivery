@@ -1,3 +1,4 @@
+import Image from "@/components/ui/image";
 import { getProduct } from "@/services/api";
 
 interface ProductPageProps {
@@ -9,12 +10,15 @@ const ProductPage = async ({ params: { slug } }: ProductPageProps) => {
   const product = await getProduct(slug);
 
   return (
-    <div>
-      <p>{product.name}</p>
-      <p>{product.description}</p>
-      <p>{product.price}</p>
-      <p>{product.category_id}</p>
-    </div>
+    <main className="max-w-4xl w-full mx-auto flex-1">
+      <div className="w-full bg-primary">
+        <Image src={product.image_url} alt={product.name} className="w-full" />
+      </div>
+      <div className="mx-4 my-2">
+        <h1 className="text-lg font-bold">{product.name}</h1>
+        <p>{product.description}</p>
+      </div>
+    </main>
   );
 };
 

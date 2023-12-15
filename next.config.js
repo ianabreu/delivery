@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "muffatosupermercados.vteximg.com.br",
+        hostname: "firebasestorage.googleapis.com",
         protocol: "https",
       },
     ],

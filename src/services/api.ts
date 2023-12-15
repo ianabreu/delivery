@@ -70,14 +70,19 @@ import { IProduct } from "@/@types/product";
 //     return [];
 //   }
 // };
-const getProduct = async (slug: string) => {
+const getProduct = async (slug: string, status: Status = "active") => {
+  const productRef = collection(db, "products");
+  const productQuery = query(
+    productRef,
+    where("slug", "==", slug),
+    where("status", "==", status)
+  );
   try {
-    const productRef = collection(db, "products");
-    const q = query(productRef, where("slug", "==", slug));
-    const docSnap = await getDocs(q);
+    const docSnap = await getDocs(productQuery);
     const doc: QueryDocumentSnapshot<DocumentData, DocumentData> =
       docSnap.docs[0];
-    const product: IProduct = {
+
+    let product: IProduct = {
       id: doc.id,
       name: doc.data().name,
       category_id: doc.data().category_id,
@@ -87,10 +92,8 @@ const getProduct = async (slug: string) => {
       slug: doc.data().slug,
       status: doc.data().status,
     };
-
     return product;
   } catch (error) {
-    console.log(error);
     throw new Error("Produto não encontrado");
   }
 };
