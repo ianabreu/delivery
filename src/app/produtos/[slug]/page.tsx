@@ -1,4 +1,4 @@
-import api from "@/services/api";
+import { getProduct } from "@/services/api";
 
 interface ProductPageProps {
   params: {
@@ -6,7 +6,7 @@ interface ProductPageProps {
   };
 }
 const ProductPage = async ({ params: { slug } }: ProductPageProps) => {
-  const product = await api.getProduct(slug);
+  const product = await getProduct(slug);
 
   return (
     <div>
