@@ -3,15 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "uploads.metropoles.com",
-        protocol: "https",
-      },
-      {
-        hostname: "blog.biglar.com.br",
-        protocol: "https",
-      },
-      {
-        hostname: "images.tcdn.com.br",
+        hostname: "muffatosupermercados.vteximg.com.br",
         protocol: "https",
       },
     ],
