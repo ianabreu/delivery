@@ -13,6 +13,7 @@ const ProductPage = async ({ params: { slug } }: ProductPageProps) => {
       <p>{product.name}</p>
       <p>{product.description}</p>
       <p>{product.price}</p>
+      <p>{product.category_id}</p>
     </div>
   );
 };
